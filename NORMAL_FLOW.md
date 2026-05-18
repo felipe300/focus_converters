@@ -16,17 +16,22 @@ poetry run python -m focus_converter.main list-providers
 
 ```bash
 poetry run python -m focus_converter.main convert --help
-
 # AND
 poetry run python -m focus_converter.main convert-auto --help
 ```
 
 4. **Use included sample data**
 
-Check the sample data in the folder:
+Check the folder exists:
 
 ```bash
-focus_converter/exported_sample_data/aws_cur.csv
+focus_converter/exported_sample_data/
+```
+
+Export "Dummy" data:
+
+```bash
+poetry run focus-export-converted-sample-data --output-dir focus_converter/exported_sample_data/
 ```
 
 5. **Run a real conversion**
@@ -36,7 +41,7 @@ cd focus_converter_base/
 
 poetry run python -m focus_converter.main convert \
   --provider aws-cur \
-  --data-path focus_converter/exported_sample_data/aws_cur.csv \
+  --data-path ./focus_converter/exported_sample_data/aws_cur.csv \
   --data-format csv \
   --export-path output.csv
 ```
